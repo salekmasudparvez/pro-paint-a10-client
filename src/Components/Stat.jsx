@@ -2,7 +2,7 @@
 
 const Stat = () => {
     return (
-        <div className="stats w-full stats-vertical lg:stats-horizontal shadow-md shadow-orange-800">
+        <div className="stats w-full lg:h-56 stats-vertical lg:stats-horizontal shadow-md shadow-orange-800">
 
             <div className="stat">
                 <div className="stat-title">View</div>
