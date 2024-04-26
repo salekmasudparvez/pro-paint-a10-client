@@ -6,11 +6,43 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import Root from './Layout/Root';
+import Home from './Pages/Home/Home';
+import ArtAndCraft from './Pages/ArtAndCraft/ArtAndCraft';
+import AddCraftItems from './Pages/AddCraftItems/AddCraftItems';
+import MyArtAndCraftList from './Pages/MyArtAndCraftList/MyArtAndCraftList';
+import LogIn from './Pages/LogIn/LogIn';
+import SignUp from './Pages/SignUp/SignUp';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    children:[
+      {
+        path:'/',
+        element:<Home/>
+      },
+      {
+        path:'/artAndCraft',
+        element:<ArtAndCraft/>
+      },
+      {
+        path:'/addCraftItems',
+        element:<AddCraftItems/>
+      },
+      {
+        path:'/myArtAndCraftList',
+        element:<MyArtAndCraftList/>
+      },
+      {
+        path:'/logIn',
+        element:<LogIn/>
+      },
+      {
+        path:'/signup',
+        element:<SignUp/>
+      },
+    ]
   },
 ]);
 
