@@ -4,12 +4,11 @@ import Swal from "sweetalert2";
 
 
 
-const SingleArtCard = ({ data }) => {
+const SingleArtCard = ({ data,setAllPaintingData,allPaintingData }) => {
     const { image, _id, item_name, subcategory_Name, short_description, Price, rating, customization, processing_time, stockStatus, email, user_Name } = data;
     
 
     const handleDelete = _id => {
-        console.log(_id);
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -32,6 +31,8 @@ const SingleArtCard = ({ data }) => {
                                 text: "Your file has been deleted.",
                                 icon: "success"
                             });
+                            const remaining=allPaintingData.filter(SingleData=>SingleData._id!==_id);
+                            setAllPaintingData(remaining)
                         }
                     })
             }
@@ -48,7 +49,7 @@ const SingleArtCard = ({ data }) => {
                     <p>{short_description}</p>
                     <div className="card-actions justify-center">
                         <div className="join join-horizontal gap-2 ">
-                            <button className="btn bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 border-b-4 border-orange-700 hover:border-orange-500 rounded join-item">View</button>
+                            <Link to={`/details/${_id}`} className="btn bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 border-b-4 border-orange-700 hover:border-orange-500 rounded join-item">View</Link>
                             <Link to={`/update/${_id}`} className="btn bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded join-item" >Edit</Link>
                             <button onClick={() => handleDelete(_id)} className="btn bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded join-item">X</button>
                         </div>

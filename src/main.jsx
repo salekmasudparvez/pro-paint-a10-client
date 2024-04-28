@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         loader:()=>fetch('http://localhost:5000/painting')
       },
       {
-        path:'/artAndCraft/:id',
+        path:'/details/:id',
         element:<ViewDetailsAllCraft/>,
         loader:({params})=>fetch(`http://localhost:5000/painting/${params.id}`)
       },
