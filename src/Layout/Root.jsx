@@ -1,15 +1,17 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
+import { Toaster } from "react-hot-toast";
 
 
 const Root = () => {
     return (
-        <div >
+        <div>
             <Navbar />
             <div>
                 <Outlet />
             </div>
+            <Toaster />
             <Footer />
         </div>
     );

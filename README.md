@@ -13,3 +13,4 @@ npm pakages
 - 2.daisy ui
 - 3. react router
 - 4.react-awesome-slider
+- 5.react-hot-toast

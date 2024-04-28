@@ -2,6 +2,7 @@ import { FaRegEdit, FaUser } from "react-icons/fa";
 import { IoMdTime } from "react-icons/io";
 import { IoPricetagsSharp } from "react-icons/io5";
 import { MdAddPhotoAlternate, MdCategory, MdEmail, MdEventAvailable, MdOutlineSubtitles, MdStarRate } from "react-icons/md";
+import Swal from "sweetalert2";
 
 
 const AddCraftItems = () => {
@@ -30,7 +31,27 @@ const AddCraftItems = () => {
             stockStatus:stockStatus,
             email:email,
             user_Name:name}
-        console.log(newCard);
+        
+
+        fetch('http://localhost:5000/painting',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(newCard)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Added coffe successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Done'
+                  })
+            }
+        })
     }
     return (
         <div className="w-full py-10">
@@ -80,7 +101,7 @@ const AddCraftItems = () => {
                         <MdEmail />
                         <input type="text" className="grow" name="email" placeholder="Email" />
                     </label>
-                    <label className=" flex items-center col-span-2">
+                    <label className=" flex items-center lg:col-span-2">
                         <textarea className="textarea grow textarea-bordered" name="shortDescription" placeholder="Short Description"></textarea>
                     </label>
 
