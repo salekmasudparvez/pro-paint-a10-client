@@ -16,6 +16,7 @@ import Error from './Components/Error';
 import AuthProvider from './AuthProvider/AuthProvider';
 import ViewDetailsAllCraft from './Pages/ViewDetailsAllCraft/ViewDetailsAllCraft';
 import Update from './Pages/Update/Update';
+import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,9 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />
+        element: <Home />,
+        loader:()=>fetch('http://localhost:5000/painting')
+
       },
       {
         path: '/artAndCraft',
@@ -34,21 +37,21 @@ const router = createBrowserRouter([
       },
       {
         path:'/details/:id',
-        element:<ViewDetailsAllCraft/>,
+        element:<PrivateRoutes><ViewDetailsAllCraft/></PrivateRoutes>, 
         loader:({params})=>fetch(`http://localhost:5000/painting/${params.id}`)
       },
       {
         path:'/update/:id',
-        element:<Update/>,
+        element:<PrivateRoutes><Update/></PrivateRoutes>,
         loader:({params})=>fetch(`http://localhost:5000/painting/${params.id}`)
       },
       {
         path: '/addCraftItems',
-        element: <AddCraftItems />
+        element:<PrivateRoutes><AddCraftItems /></PrivateRoutes> 
       },
       {
         path: '/myArtAndCraftList',
-        element: <MyArtAndCraftList />
+        element:<PrivateRoutes> <MyArtAndCraftList /></PrivateRoutes>
       },
       {
         path: '/logIn',

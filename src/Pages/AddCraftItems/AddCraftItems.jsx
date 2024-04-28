@@ -3,11 +3,15 @@ import { IoMdTime } from "react-icons/io";
 import { IoPricetagsSharp } from "react-icons/io5";
 import { MdAddPhotoAlternate, MdCategory, MdEmail, MdEventAvailable, MdOutlineSubtitles, MdStarRate } from "react-icons/md";
 import Swal from "sweetalert2";
+import useAuth from "../../Hook/useAuth";
+import { RingLoader } from "react-spinners";
 
 
 const AddCraftItems = () => {
+    
     const handleAdd = (e) => {
         e.preventDefault();
+        const form = e.target
         const photo = e.target.photo.value;
         const nameOfDrawing = e.target.nameOfDrawing.value;
         const subcategoryName = e.target.subcategoryName.value;
@@ -46,10 +50,11 @@ const AddCraftItems = () => {
             if(data.insertedId){
                 Swal.fire({
                     title: 'Success!',
-                    text: 'Added coffe successfully',
+                    text: 'Publish post successfully',
                     icon: 'success',
                     confirmButtonText: 'Done'
                   })
+                  form.reset()
             }
         })
     }

@@ -1,16 +1,10 @@
-
 import { Link } from "react-router-dom";
 
 
-
-const SingleArtCard = ({ data, setAllPaintingData, allPaintingData }) => {
-    const { image, _id, item_name, subcategory_Name, short_description, Price, rating, customization, processing_time, stockStatus, email, user_Name } = data;
-
-
-    
+const CraftItemsCard = ({single}) => {
+    const { image, _id, item_name, subcategory_Name, short_description, Price, rating, customization, processing_time, stockStatus, email, user_Name } = single;
     return (
         <div>
-            
             <div className="flex flex-col justify-center duration-1000 items-center border p-2 rounded-xl shadow-xl hover:shadow-2xl">
                 <div><img className="rounded-xl" src={image} /></div>
                 <div className="text-center space-y-3  text-[#f9f9f9] font-playfair font-semibold text-xl">
@@ -25,10 +19,8 @@ const SingleArtCard = ({ data, setAllPaintingData, allPaintingData }) => {
                     </div>
                 </div>
             </div>
-
-
         </div>
     );
 };
 
-export default SingleArtCard;
+export default CraftItemsCard;

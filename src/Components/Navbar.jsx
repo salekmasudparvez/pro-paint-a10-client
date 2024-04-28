@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hook/useAuth";
+import { RingLoader } from "react-spinners";
 
 
 const Navbar = () => {
     const [theme, setTheme] = useState();
     
-    const { user, LogOutUser } = useAuth();
+    const { user, LogOutUser , loading} = useAuth();
     document.querySelector('html').setAttribute('data-theme', theme);
 
     const links = <>
@@ -50,13 +51,14 @@ const Navbar = () => {
 
                     {user ?
                         <div className="avatar dropdown dropdown-end ring ring-orange-700 ring-offset-base-100 ring-offset-2 rounded-full w-14">
-                            <img className="rounded-full" tabIndex={0} role="button" src={user.photoURL ? user.photoURL : "https://cdn-icons-png.freepik.com/256/3177/3177440.png"} />
+                            <img className="rounded-full" tabIndex={0} role="button" src={user.photoURL ? user.photoURL : 
+                                 "https://cdn-icons-png.freepik.com/256/3177/3177440.png"} />
                             <ul tabIndex={0} className="dropdown-content z-[10] menu shadow bg-base-100 rounded-box p-3 w-52">
                                 <li><a className="text-lg font-bold text-orange-600">{user.displayName}</a></li>
                                 <li><a onClick={() => LogOutUser()} className="btn btn-outline ">Log out</a></li>
                             </ul>
 
-                        </div> :
+                        </div> :loading?<RingLoader color="#36d7b7" />:
                         <div className="lg:flex hidden">
                             <Link to='/logIn' className="btn btn-outline md:btn-md btn-sm hover:bg-[#481E14]">Login</Link>
                             <Link to='/signup' className="btn btn-outline md:btn-md btn-sm hover:bg-[#481E14]">Sign up</Link>
