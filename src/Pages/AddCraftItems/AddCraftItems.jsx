@@ -4,10 +4,11 @@ import { IoPricetagsSharp } from "react-icons/io5";
 import { MdAddPhotoAlternate, MdCategory, MdEmail, MdEventAvailable, MdOutlineSubtitles, MdStarRate } from "react-icons/md";
 import Swal from "sweetalert2";
 import useAuth from "../../Hook/useAuth";
-import { RingLoader } from "react-spinners";
 
 
 const AddCraftItems = () => {
+
+    const {user}=useAuth()
     
     const handleAdd = (e) => {
         e.preventDefault();
@@ -100,11 +101,11 @@ const AddCraftItems = () => {
                     </label>
                     <label className="input input-bordered flex items-center gap-2">
                         <FaUser />
-                        <input type="text" className="grow" name="name" placeholder="Name" />
+                        <input type="text" className="grow" name="name" placeholder="Name" value={user.displayName}/>
                     </label>
                     <label className="input input-bordered flex items-center gap-2">
                         <MdEmail />
-                        <input type="text" className="grow" name="email" placeholder="Email" />
+                        <input type="text" className="grow" name="email" placeholder="Email" value={user.email} />
                     </label>
                     <label className=" flex items-center lg:col-span-2">
                         <textarea className="textarea grow textarea-bordered" name="shortDescription" placeholder="Short Description"></textarea>

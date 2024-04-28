@@ -51,7 +51,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/myArtAndCraftList',
-        element:<PrivateRoutes> <MyArtAndCraftList /></PrivateRoutes>
+        element:<PrivateRoutes> <MyArtAndCraftList /></PrivateRoutes>,
+        loader:()=>fetch('http://localhost:5000/painting')
       },
       {
         path: '/logIn',
