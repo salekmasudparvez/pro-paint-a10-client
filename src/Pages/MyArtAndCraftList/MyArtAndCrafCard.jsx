@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import PropTypes from 'prop-types';
 
 
 const MyArtAndCrafCard = ({ privateData,setMyData,MyData }) => {
-    const { image, _id, item_name, subcategory_Name, short_description, Price, rating, customization, processing_time, stockStatus, email, user_Name } = privateData;
+    const { image, _id, item_name, subcategory_Name, short_description, Price, rating, stockStatus, user_Name } = privateData;
+    console.log(typeof setMyData);
     const handleDelete = _id => {
         Swal.fire({
             title: "Are you sure?",
@@ -57,5 +59,12 @@ const MyArtAndCrafCard = ({ privateData,setMyData,MyData }) => {
         </>
     );
 };
+MyArtAndCrafCard.propTypes={
+    privateData : PropTypes.object,
+    setMyData: PropTypes.func,
+    MyData:PropTypes.func
+
+}
+
 
 export default MyArtAndCrafCard;

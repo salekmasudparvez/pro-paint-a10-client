@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import { PropTypes } from 'prop-types';
 
 
 const CraftItemsCard = ({single}) => {
-    const { image, _id, item_name, subcategory_Name, short_description, Price, rating, customization, processing_time, stockStatus, email, user_Name } = single;
+    const { image, _id, item_name, subcategory_Name, short_description, Price, rating, stockStatus,user_Name } = single;
     return (
         <div>
             <div className="flex flex-col justify-center duration-1000 items-center border p-2 rounded-xl shadow-xl hover:shadow-2xl">
@@ -22,5 +23,8 @@ const CraftItemsCard = ({single}) => {
         </div>
     );
 };
+CraftItemsCard.propTypes={
+    single:PropTypes.object
+}
 
 export default CraftItemsCard;
