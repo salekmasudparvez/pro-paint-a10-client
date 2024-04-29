@@ -5,7 +5,7 @@ import ArtAndCraftCategoryCard from "./ArtAndCraftCategoryCard";
 const ArtAndCraftCategory = () => {
   const[subCategory, setSubcatgorye]=useState([])
   useEffect(()=>{
-      fetch('http://localhost:5000/subcategory')
+      fetch('https://painting-and-drawing-server-xi.vercel.app/subcategory')
       .then(res=>res.json())
       .then(data=>{
         setSubcatgorye(data);

@@ -28,23 +28,23 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        loader:()=>fetch('http://localhost:5000/painting')
+        loader:()=>fetch('https://painting-and-drawing-server-xi.vercel.app/painting')
 
       },
       {
         path: '/artAndCraft',
         element: <ArtAndCraft />,
-        loader:()=>fetch('http://localhost:5000/painting')
+        loader:()=>fetch('https://painting-and-drawing-server-xi.vercel.app/painting')
       },
       {
         path:'/details/:id',
         element:<PrivateRoutes><ViewDetailsAllCraft/></PrivateRoutes>, 
-        loader:({params})=>fetch(`http://localhost:5000/painting/${params.id}`)
+        loader:({params})=>fetch(`https://painting-and-drawing-server-xi.vercel.app/painting/${params.id}`)
       },
       {
         path:'/update/:id',
         element:<PrivateRoutes><Update/></PrivateRoutes>,
-        loader:({params})=>fetch(`http://localhost:5000/painting/${params.id}`)
+        loader:({params})=>fetch(`https://painting-and-drawing-server-xi.vercel.app/painting/${params.id}`)
       },
       {
         path: '/addCraftItems',
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
       {
         path: '/myArtAndCraftList',
         element:<PrivateRoutes> <MyArtAndCraftList /></PrivateRoutes>,
-        loader:()=>fetch('http://localhost:5000/painting')
+        loader:()=>fetch('https://painting-and-drawing-server-xi.vercel.app/painting')
       },
       {
         path:'/ArtAndCraftCategory',
