@@ -14,7 +14,7 @@ const MyArtAndCraftList = () => {
     const [MyData,setMyData]=useState(MyDataLoaded)
     
     return (
-        <div className="max-w-5xl mx-auto py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="max-w-5xl mx-auto gap-6 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
            {MyData.map((privateData,idx)=><MyArtAndCrafCard key={idx} setMyData={setMyData} MyData={MyData} privateData={privateData}></MyArtAndCrafCard>)}  
         </div>
     );
