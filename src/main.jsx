@@ -18,6 +18,7 @@ import ViewDetailsAllCraft from './Pages/ViewDetailsAllCraft/ViewDetailsAllCraft
 import Update from './Pages/Update/Update';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 import ArtAndCraftCategoryCard from './Components/ArtAndCraftCategoryCard';
+import SubCategoryDetails from './Pages/SubCategoryDetails/SubCategoryDetails';
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,12 @@ const router = createBrowserRouter([
       {
         path:'/ArtAndCraftCategory',
         element:<ArtAndCraftCategoryCard/>
+      },
+      {
+        path:'/SubCategoryDetails/:id',
+        element:<SubCategoryDetails/>,
+        loader:({params})=>fetch(`https://painting-and-drawing-server-xi.vercel.app/subcategory/${params.id}`)
+
       },
       {
         path: '/logIn',

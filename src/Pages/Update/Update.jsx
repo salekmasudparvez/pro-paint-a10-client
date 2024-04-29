@@ -34,7 +34,7 @@ const Update = () => {
         }
 
         console.log(updateCard);
-        fetch(`http://localhost:5000/painting/${_id}`,{
+        fetch(`https://painting-and-drawing-server-xi.vercel.app/painting/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

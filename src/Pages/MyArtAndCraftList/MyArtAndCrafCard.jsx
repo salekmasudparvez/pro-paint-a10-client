@@ -19,7 +19,7 @@ const MyArtAndCrafCard = ({ privateData, setMyData, MyData }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/painting/${_id}`, {
+                fetch(`https://painting-and-drawing-server-xi.vercel.app/painting/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

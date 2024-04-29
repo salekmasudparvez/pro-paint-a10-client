@@ -38,7 +38,7 @@ const AddCraftItems = () => {
             user_Name:name}
         
 
-        fetch('http://localhost:5000/painting',{
+        fetch('https://painting-and-drawing-server-xi.vercel.app/painting',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
