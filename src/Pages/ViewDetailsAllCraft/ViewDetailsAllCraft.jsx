@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const ViewDetailsAllCraft = () => {
     const data = useLoaderData()
-    const { image, _id, item_name, subcategory_Name, short_description, Price, rating, customization, processing_time, stockStatus, email, user_Name } = data;
+    const { image, item_name, subcategory_Name, short_description, Price, rating, customization, processing_time, stockStatus,  user_Name } = data;
     return (
         <div className="max-w-5xl mx-auto">
 
@@ -58,9 +58,8 @@ const ViewDetailsAllCraft = () => {
                             </div>
                             {/* table end */}
                         </div>
-                        <div className="space-x-4">
+                        <div>
                             <Link to="/"  className="btn btn-outline">Go Back to Home</Link>
-                            <Link to={`/update/${_id}`}  className="btn bg-orange-950 text-white">Update</Link>
 
                         </div>
 
