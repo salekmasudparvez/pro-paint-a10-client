@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 
 
 const MyArtAndCrafCard = ({ privateData,setMyData,MyData }) => {
-    const { image, _id, item_name, subcategory_Name, short_description, Price, rating, stockStatus, user_Name } = privateData;
-    console.log(typeof setMyData);
+    const { image, _id, item_name, subcategory_Name, short_description,processing_time, Price, rating, stockStatus, user_Name } = privateData;
     const handleDelete = _id => {
         Swal.fire({
             title: "Are you sure?",
@@ -46,7 +45,7 @@ const MyArtAndCrafCard = ({ privateData,setMyData,MyData }) => {
                     <h1 className="text-orange-500">{item_name}</h1>
                     <div className="flex justify-between"><span className="text-base text-gray-500 text-left">Added By {user_Name}</span> <span className="text-right text-base text-gray-500">Subcategory Name: {subcategory_Name}</span></div>
                     <div className="text-sm text-gray-400 text-left">{short_description}</div>
-                    <div className="flex justify-between text-sm text-left"><p>Subcategory Name:{subcategory_Name}</p>Stock-Status:{stockStatus} </div>
+                    <div className="flex justify-between text-sm text-left text-purple-600"><p>Processing Time:<span className="text-sm text-gray-400">{processing_time}</span></p>Stock-Status:<span className="text-gray-400">{stockStatus}</span></div>
                     <div className="flex justify-between  text-sm"><p className="text-red-500">Price:{Price}</p>Rating:{rating}  </div>
 
                     <div className="join join-horizontal gap-2 ">
