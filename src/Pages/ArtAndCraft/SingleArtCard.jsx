@@ -20,7 +20,7 @@ const SingleArtCard = ({ data }) => {
                     <div className="text-sm text-gray-400 text-left">{short_description}</div>
                     <div className="flex justify-between text-sm text-left text-purple-600"><p>Processing Time:<span className="text-sm text-gray-400">{processing_time}</span></p>Stock-Status:<span className="text-gray-400">{stockStatus}</span></div>
 
-                    <div className="flex justify-between  text-sm"><p className="text-red-500">Price:{Price}</p>Rating:{rating}  </div>
+                    <div className="flex justify-between  text-sm"><p className="text-red-500">Price:{Price}$</p>Rating:{rating}  </div>
 
                     <div>
                         <Link to={`/details/${_id}`} className="btn bg-orange-500 btn-block hover:bg-orange-400 text-white font-bold py-2 px-4 border-b-4 border-orange-700 hover:border-orange-500 rounded join-item">View</Link>

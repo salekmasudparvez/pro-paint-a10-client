@@ -17,6 +17,7 @@ import AuthProvider from './AuthProvider/AuthProvider';
 import ViewDetailsAllCraft from './Pages/ViewDetailsAllCraft/ViewDetailsAllCraft';
 import Update from './Pages/Update/Update';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
+import ArtAndCraftCategoryCard from './Components/ArtAndCraftCategoryCard';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
         path: '/myArtAndCraftList',
         element:<PrivateRoutes> <MyArtAndCraftList /></PrivateRoutes>,
         loader:()=>fetch('http://localhost:5000/painting')
+      },
+      {
+        path:'/ArtAndCraftCategory',
+        element:<ArtAndCraftCategoryCard/>
       },
       {
         path: '/logIn',
