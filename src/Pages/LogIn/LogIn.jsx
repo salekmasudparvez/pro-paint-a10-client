@@ -18,6 +18,16 @@ const LogIn = () => {
         const email = form.email.value;
         const password = form.password.value;
         signInWithPassword(email,password)
+        .then(res=>{
+            if(res){
+                Swal.fire({
+                    title: "Good job!",
+                    text: "You clicked the button!",
+                    icon: "success"
+                  })              
+
+            }
+        })
         .catch(error=>{if(error){
             Swal.fire({
                 icon: "error",
@@ -25,8 +35,6 @@ const LogIn = () => {
                 text: "Invaild email or password!",
               });
         }})
-
-        console.log(email, password,);
     }
     return (
         <div className="hero min-h-screen bg-[url('https://cdn.stocksnap.io/img-thumbs/960w/paint-tube_YQBJGLGPPQ.jpg')] bg-no-repeat bg-center bg-cover">
