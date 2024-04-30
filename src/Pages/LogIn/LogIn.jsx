@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hook/useAuth";
+import Swal from "sweetalert2";
 
 
 const LogIn = () => {
@@ -17,6 +18,13 @@ const LogIn = () => {
         const email = form.email.value;
         const password = form.password.value;
         signInWithPassword(email,password)
+        .catch(error=>{if(error){
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Invaild email or password!",
+              });
+        }})
 
         console.log(email, password,);
     }
