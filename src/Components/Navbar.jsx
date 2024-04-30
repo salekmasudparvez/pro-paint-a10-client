@@ -56,8 +56,8 @@ const Navbar = () => {
                     </label>
 
                     {user ?
-                        <div data-tooltip-id="my-tooltip" data-tooltip-content="Profile" className="avatar dropdown dropdown-end ring ring-orange-700 ring-offset-base-100 ring-offset-2 rounded-full w-14">
-                            <img className="rounded-full" tabIndex={0} role="button" src={user.photoURL ? user.photoURL :
+                        <div data-tooltip-id="my-tooltip" data-tooltip-content="Profile" className="avatar w-14 h-14 object-cover dropdown dropdown-end ring ring-orange-700 ring-offset-base-100 ring-offset-2 rounded-full">
+                            <img className="rounded-full " tabIndex={0} role="button" src={user.photoURL ? user.photoURL :
                                 "https://cdn-icons-png.freepik.com/256/3177/3177440.png"} />
                             <ul tabIndex={0} className="dropdown-content z-[10] menu shadow bg-base-100 rounded-box p-3 w-52">
                                 <li><a className="text-lg font-bold text-orange-600">{user.displayName}</a></li>
