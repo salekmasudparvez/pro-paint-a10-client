@@ -1,16 +1,22 @@
-# React + Vite
+# Pro Painting
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Each of these artistic endeavors offers its own unique set of techniques, challenges, and opportunities for creative expression. Whether you're drawn to the realism of oil painting, the spontaneity of watercolors, or the whimsy of cartoons, there's a world of possibilities waiting to be explored on canvas or paper.
 
-Currently, two official plugins are available:
+Certainly! Here's an overview of each category:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- (a) Here you will find many awesome drawing and painting.
+
+- (b) You can also post your drawing 
+
+- (c) You can edit and delete the post
+
+- (d) You can buy any drawing and painting 
+
+- (e) You can also change theme
+
+- [Live Preview](https://pro-painting.netlify.app/) 
 
 
-npm pakages
-- 1.tailwind
-- 2.daisy ui
-- 3. react router
-- 4.react-awesome-slider
-- 5.react-hot-toast
+npm Challenge part pakages
+- a. React-simple-typewriter
+- b. React-tooltip
