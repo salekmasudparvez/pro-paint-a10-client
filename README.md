@@ -31,3 +31,7 @@ Certainly! Here's an overview of each category:
 npm Challenge part pakages
 - a. React-simple-typewriter
 - b. React-tooltip
+
+# For the project 
+I utilized HTML, CSS, Tailwind (CSS framework), JavaScript,
+React, Express.js, MongoDB, and Firebase for authentication.
