@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hook/useAuth";
 import { RingLoader } from "react-spinners";
@@ -8,13 +8,18 @@ import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
 
-    const [updateTheme, setUpdateTheme] = useState("light")
+
+    const [updateTheme, setUpdateTheme] = useState(localStorage.getItem('theme') || "light")
 
     const { user, LogOutUser, loading } = useAuth();
 
-    if (updateTheme) {
+   
+    useEffect(() => {
+        localStorage.setItem('theme', updateTheme)
         document.querySelector('html').setAttribute('data-theme', updateTheme);
-    }
+    }, [updateTheme])
+
+
     const links = <>
         <li ><NavLink to='/'>Home</NavLink></li>
         <li ><NavLink to='/artAndCraft'> All Art & craft Items</NavLink></li>
