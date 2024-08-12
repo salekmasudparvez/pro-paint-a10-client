@@ -1,3 +1,14 @@
+## How to run this project
+first you have clone this project and then
+
+Step-1:
+```bash
+  npm install
+```
+Step-2:
+```bash
+  npm run dev
+```
 # Pro Painting
 
 Each of these artistic endeavors offers its own unique set of techniques, challenges, and opportunities for creative expression. Whether you're drawn to the realism of oil painting, the spontaneity of watercolors, or the whimsy of cartoons, there's a world of possibilities waiting to be explored on canvas or paper.
@@ -20,3 +31,7 @@ Certainly! Here's an overview of each category:
 npm Challenge part pakages
 - a. React-simple-typewriter
 - b. React-tooltip
+
+# For the project 
+I utilized HTML, CSS, Tailwind (CSS framework), JavaScript,
+React, Express.js, MongoDB, and Firebase for authentication.
