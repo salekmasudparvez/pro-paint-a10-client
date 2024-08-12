@@ -10,7 +10,7 @@ const CraftItems = ({dataLimit}) => {
         <div>
             <div className="space-y-4 py-7">
                 <h1 className="text-3xl font-bold font-playfair text-center"> Craft Items</h1>
-                <p className="text-base text-orange-800 text-center"><Typewriter 
+                <p className="text-base text-[#fe7354] text-center"><Typewriter 
                 loop={false}
                  words={['Here you will find awesome arts and painting . You can upload your painting']}
                  /></p>

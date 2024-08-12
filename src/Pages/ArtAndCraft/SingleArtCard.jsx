@@ -26,7 +26,7 @@ const SingleArtCard = ({ singlePaintData }) => {
             </td>
             <td>{subcategory_Name}</td>
             <td>{short_description}</td>
-            <td><Link to={`/details/${_id}`} className="btn btn-outline bg-yellow-700 text-white">view</Link></td>
+            <td><Link to={`/details/${_id}`} className="btn btn-outline bg-[#FF9178] hover:bg-[#ff876c] text-white">view</Link></td>
         </tr>
     );
 };

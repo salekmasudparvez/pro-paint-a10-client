@@ -17,7 +17,7 @@ const ArtAndCraftCategory = () => {
   return (
     <div className="space-y-10">
       <div className="text-center space-y-4">
-        <h1 className="text-3xl font-bold text-orange-800 font-playfair">Art And Craft Category</h1>
+        <h1 className="text-3xl font-bold text-[#FF9178] font-playfair">Art And Craft Category</h1>
         <p className="text-gray-400">Painting and drawing are fundamental forms of visual art that involve creating images, compositions, and representations using various mediums, techniques, and styles. Both painting and drawing offer artists a means of expression, communication, and exploration of ideas, emotions, and aesthetics.</p>
 
       </div>

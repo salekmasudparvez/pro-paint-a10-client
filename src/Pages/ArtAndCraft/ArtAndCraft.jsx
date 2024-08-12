@@ -13,7 +13,7 @@ const ArtAndCraft = () => {
             <table className="table">
                 {/* head */}
                 <thead>
-                    <tr className="bg-orange-300 text-black">
+                    <tr className="bg-[#FF9178] text-black">
                         <th>Drawing image</th>
                         <th>Name</th>
                         <th>Subcategory Name</th>
