@@ -1,11 +1,33 @@
+import { useQuery } from "@tanstack/react-query";
 import CraftItemsCard from "./CraftItemsCard";
 import { PropTypes } from 'prop-types';
 import { Typewriter } from 'react-simple-typewriter'
+import axios from "axios";
+import { PulseLoader } from "react-spinners";
 
 
-
-const CraftItems = ({dataLimit}) => {
-
+const CraftItems = () => {
+  const {isLoading,data:paintings}=useQuery({
+    queryKey: ['paintings'],
+    queryFn: async () => {
+      const response = await axios.get('https://painting-and-drawing-server-xi.vercel.app/painting?limit=6');
+      const data = response.data
+      return data
+    },
+    
+  })
+  if(isLoading){
+    return (
+        <div className="flex justify-center items-center w-full h-full">
+          <PulseLoader
+        color="#FF9178"
+        size={30}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+        </div>
+    )
+  }
     return (
         <div>
             <div className="space-y-4 py-7">
@@ -17,7 +39,7 @@ const CraftItems = ({dataLimit}) => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center ">
 
-                {dataLimit.map((single,idx)=><CraftItemsCard key={idx} single={single}></CraftItemsCard>)}
+                {paintings?.map((single,idx)=><CraftItemsCard key={idx} single={single}></CraftItemsCard>)}
 
             </div>
 

@@ -19,6 +19,10 @@ import Update from './Pages/Update/Update';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 import ArtAndCraftCategoryCard from './Components/ArtAndCraftCategoryCard';
 import SubCategoryDetails from './Pages/SubCategoryDetails/SubCategoryDetails';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 
 const router = createBrowserRouter([
   {
@@ -29,41 +33,38 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        loader:()=>fetch('https://painting-and-drawing-server-xi.vercel.app/painting')
 
       },
       {
         path: '/artAndCraft',
         element: <ArtAndCraft />,
-        loader:()=>fetch('https://painting-and-drawing-server-xi.vercel.app/painting')
       },
       {
-        path:'/details/:id',
-        element:<PrivateRoutes><ViewDetailsAllCraft/></PrivateRoutes>, 
-        loader:({params})=>fetch(`https://painting-and-drawing-server-xi.vercel.app/painting/${params.id}`)
+        path: '/details/:id',
+        element: <PrivateRoutes><ViewDetailsAllCraft /></PrivateRoutes>,
+        loader: ({ params }) => fetch(`https://painting-and-drawing-server-xi.vercel.app/painting/${params.id}`)
       },
       {
-        path:'/update/:id',
-        element:<PrivateRoutes><Update/></PrivateRoutes>,
-        loader:({params})=>fetch(`https://painting-and-drawing-server-xi.vercel.app/painting/${params.id}`)
+        path: '/update/:id',
+        element: <PrivateRoutes><Update /></PrivateRoutes>,
+        loader: ({ params }) => fetch(`https://painting-and-drawing-server-xi.vercel.app/painting/${params.id}`)
       },
       {
         path: '/addCraftItems',
-        element:<PrivateRoutes><AddCraftItems /></PrivateRoutes> 
+        element: <PrivateRoutes><AddCraftItems /></PrivateRoutes>
       },
       {
         path: '/myArtAndCraftList',
-        element:<PrivateRoutes> <MyArtAndCraftList /></PrivateRoutes>,
-        loader:()=>fetch('https://painting-and-drawing-server-xi.vercel.app/painting')
+        element: <PrivateRoutes> <MyArtAndCraftList /></PrivateRoutes>,
+        loader: () => fetch('https://painting-and-drawing-server-xi.vercel.app/painting')
       },
       {
-        path:'/ArtAndCraftCategory',
-        element:<ArtAndCraftCategoryCard/>
+        path: '/ArtAndCraftCategory',
+        element: <ArtAndCraftCategoryCard />
       },
       {
-        path:'/SubCategoryDetails/:id',
-        element:<SubCategoryDetails/>,
-        loader:({params})=>fetch(`https://painting-and-drawing-server-xi.vercel.app/subcategory/${params.id}`)
+        path: '/SubCategoryDetails/:id',
+        element: <SubCategoryDetails />,
 
       },
       {
@@ -77,11 +78,14 @@ const router = createBrowserRouter([
     ]
   },
 ]);
+const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );

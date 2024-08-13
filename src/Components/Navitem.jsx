@@ -6,7 +6,7 @@ const Navitem = ({name,to}) => {
         <NavLink
             to={to}
             className={({ isActive, isPending }) =>
-                isPending ? " font-semibold lg:border-b-2 border  lg:bg-gray-100 lg:border-l-0 lg:border-r-0 border-t-0  bg-gray-200 lg:w-fit p-2 w-full lg:border-b-gray-500 text-[#949494]" : isActive ? " font-semibold lg:border-b-2 border  lg:bg-gray-100 lg:border-l-0 lg:border-r-0 border-t-0  bg-gray-200 lg:w-fit p-2 w-full lg:border-b-gray-500 text-[#949494]" : "hover:text-[#4f4e4e] font-semibold lg:w-fit p-2 w-full lg:hover hover:bg-gray-200"
+                isPending ? " font-semibold lg:border-b-2 border  lg:border-l-0 lg:border-b-[#FF9178] lg:border-r-0 border-t-0 lg:bg-white bg-gray-200 lg:w-fit p-2 w-full  text-[#1a1a1a]" : isActive ? "font-semibold lg:border-b-2 lg:border-b-[#ff896f] border  lg:border-l-0 lg:border-r-0 border-t-0 lg:bg-white bg-gray-200 lg:w-fit p-2 w-full text-[#000000]" : "hover:text-[#515151] font-semibold lg:w-fit p-2 w-full lg:hover hover:bg-gray-200"
             }
         >
             {name}

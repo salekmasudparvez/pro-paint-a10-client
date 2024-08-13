@@ -1,14 +1,33 @@
-import { useLoaderData } from "react-router-dom";
 import SingleArtCard from "./SingleArtCard";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { PulseLoader } from "react-spinners";
 
 
 const ArtAndCraft = () => {
-    const allPaintingData = useLoaderData();
-
+    const {isLoading,data:allPaintingData}=useQuery({
+        queryKey: ['allPaintingData'],
+        queryFn: async () => {
+            // fetch data from an API
+            const response = await axios.get('https://painting-and-drawing-server-xi.vercel.app/painting');
+            const data = response.data
+            return data;
+        }, 
+    })
+    if(isLoading){
+        return (
+            <div className="flex justify-center items-center w-full h-full">
+              <PulseLoader
+            color="#FF9178"
+            size={30}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+            </div>
+        )
+      }
     return (
-        // <div className="max-w-5xl gap-6 mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 my-10">
-        //     {allPaintingData.map((data,idx)=><SingleArtCard key={idx} allPaintingData={allPaintingData} data={data}></SingleArtCard>)}
-        // </div>
+      
         <div className="overflow-x-auto max-w-5xl py-5 rounded-sm my-5 bg-base-300 mx-auto">
             <table className="table">
                 {/* head */}
@@ -22,7 +41,7 @@ const ArtAndCraft = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {allPaintingData.map((singlePaintData,idx)=><SingleArtCard key={idx} singlePaintData={singlePaintData}></SingleArtCard>)}
+                    {allPaintingData?.map((singlePaintData,idx)=><SingleArtCard key={idx} singlePaintData={singlePaintData}></SingleArtCard>)}
                 </tbody>
             </table>
         </div>

@@ -14,7 +14,7 @@ const ArtAndCraftCategoryCard = ({ singleSub }) => {
                 <h1 className="text-xl font-bold">{subcategory}</h1>
                 <p className="font-light">{description}</p>
             </div>
-            <div ><Link to={`/SubCategoryDetails/${_id}`} className=' btn btn-block btn-outline bg-[#ff8e74] hover:bg-[#fd8064] text-white'>View</Link></div>
+            <div ><Link to={`/SubCategoryDetails/${subcategory}`} className=' btn btn-block btn-outline bg-[#ff8e74] hover:bg-[#fd8064] text-white'>View</Link></div>
         </Link>
 
     );
