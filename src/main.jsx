@@ -24,6 +24,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import AllArtCraft from './Pages/ArtAndCraft/AllArtCraft';
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -86,6 +87,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <RouterProvider router={router} />
+        <Toaster />
       </AuthProvider>
     </QueryClientProvider>
   </React.StrictMode>
