@@ -7,7 +7,7 @@ import {
 import "./index.css";
 import Root from './Layout/Root';
 import Home from './Pages/Home/Home';
-import ArtAndCraft from './Pages/ArtAndCraft/ArtAndCraft';
+//import ArtAndCraft from './Pages/ArtAndCraft/ArtAndCraft';
 import AddCraftItems from './Pages/AddCraftItems/AddCraftItems';
 import MyArtAndCraftList from './Pages/MyArtAndCraftList/MyArtAndCraftList';
 import LogIn from './Pages/LogIn/LogIn';
@@ -23,6 +23,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import AllArtCraft from './Pages/ArtAndCraft/AllArtCraft';
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/artAndCraft',
-        element: <ArtAndCraft />,
+        element: <AllArtCraft />,
       },
       {
         path: '/details/:id',
