@@ -41,7 +41,7 @@ const AllArtCraftCard = ({ singlePaintData }) => {
         
     }
     return (
-        <div className="rounded-md shadow-md sm:w-96 shadow-gray-200 bg-white  text-gray-900">
+        <div className="rounded-md shadow-md shadow-gray-200 bg-white  text-gray-900">
             <div className="flex items-center justify-between p-3">
                 <div className="flex items-center space-x-2">
                     <img src="https://source.unsplash.com/50x50/?portrait" alt="" className="object-cover object-center w-6 h-6 rounded-full shadow-sm bg-gray-500 border-gray-700" />
