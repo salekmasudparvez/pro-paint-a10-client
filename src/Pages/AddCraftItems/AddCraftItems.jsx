@@ -62,7 +62,7 @@ const AddCraftItems = () => {
     return (
         <div className="w-full py-10">
             <form onSubmit={handleAdd} className=" max-w-3xl mx-auto bg-gray-500 bg-opacity-60 space-y-3 border rounded-lg p-8">
-                <div><h1 className="text-xl font-medium text-center text-orange-800">Add your drawing or painting</h1></div>
+                <div><h1 className="text-xl font-medium text-center text-orange-100">Add your drawing or painting</h1></div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
                     <label className="input input-bordered flex items-center gap-2">
@@ -113,7 +113,7 @@ const AddCraftItems = () => {
 
 
                 </div>
-                <div><button type="submit" className="btn btn-block  text-white bg-[#F2613F] hover:bg-[#f2603f9d]">Add</button></div>
+                <div><button type="submit" className="btn btn-block  text-white bg-[#fd7a5d] hover:bg-[#f2603f9d]">Add</button></div>
             </form>
         </div>
     );
