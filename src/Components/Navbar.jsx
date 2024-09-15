@@ -29,17 +29,17 @@ const Navbar = () => {
     </>
     return (
         <div>
-            <div className="navbar shadow-lg md:px-12 w-full">
+            <div className="navbar shadow-lg md:px-12 w-full z-50">
                 <div className="navbar-start w-[30%] flex justify-start ">
                     <div className=" w-full lg:hidden">
-                       
+
                         <div className="">
                             <Hamburger size="22" toggled={isOpen} toggle={setOpen} />
                         </div>
-                       
-                        {isOpen && (
-                            <div className={`bg-white border lg:hidden transform ease-in-out duration-1000 w-full absolute flex flex-col z-10 rounded-b pb-4 space-y-1 px-3 left-0 right-0 
-    ${isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}>
+
+                     
+                            <div className={`bg-white border lg:hidden transition ease-in-out duration-1000 w-full absolute flex flex-col z-10 rounded-b pb-4 space-y-1 px-3 left-0 right-0 
+    ${isOpen ? " opacity-100" : " opacity-0 "}`}>
                                 {links}
                                 <Link to='/logIn' className="btn btn-outline md:btn-md btn-sm hover:bg-[#481E14]">Login</Link>
                                 <Link to='/signup' className="btn btn-outline md:btn-md btn-sm hover:bg-[#481E14]">Sign up</Link>
@@ -52,8 +52,7 @@ const Navbar = () => {
                                     </svg>
                                 </label>
                             </div>
-                        )}
-
+    
 
                     </div>
                     <Link to='/' className="font-playfair font-bold md:text-xl text-lg"><sup className="text-[#c2624a6f] text-xs">Pro</sup><span className="text-[#ff9178]">PAINTING</span></Link>
