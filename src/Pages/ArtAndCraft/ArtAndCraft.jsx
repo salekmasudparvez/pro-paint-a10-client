@@ -32,7 +32,7 @@ const ArtAndCraft = () => {
             <table className="table">
                 {/* head */}
                 <thead>
-                    <tr className="bg-[#FF9178] text-black">
+                    <tr className="bg-[#FF9178] text-white">
                         <th>Drawing image</th>
                         <th>Name</th>
                         <th>Subcategory Name</th>
