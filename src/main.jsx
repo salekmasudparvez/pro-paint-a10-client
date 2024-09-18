@@ -25,6 +25,7 @@ import {
 } from '@tanstack/react-query'
 import AllArtCraft from './Pages/ArtAndCraft/AllArtCraft';
 import { Toaster } from "react-hot-toast";
+import Bookmark from './Pages/bookmark/Bookmark';
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <SignUp />
+      },
+      {
+        path: '/bookmarks',
+        element: <Bookmark />
       },
     ]
   },
